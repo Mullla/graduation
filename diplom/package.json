@@ -1,0 +1,23 @@
+{
+  "name": "graduation",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack serve --config webpack.dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mullla/graduation"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.27.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
