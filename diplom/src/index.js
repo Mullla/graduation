@@ -18,6 +18,9 @@ import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
 
+
+// *
+/* 
 // список телефонов
 showPhone();
 
@@ -65,3 +68,5 @@ getRepairTypes();
 
 // отправка форм
 sendData();
+
+*/
