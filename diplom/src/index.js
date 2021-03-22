@@ -1,6 +1,5 @@
 import showPhone from './modules/phonesList';
 import toggleMenu from './modules/menu';
-import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
 import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
