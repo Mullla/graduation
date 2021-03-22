@@ -1,5 +1,5 @@
 import showPhone from './modules/phonesList';
-import showMenu from './modules/menu';
+import toggleMenu from './modules/menu';
 import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
 import tooltip from './modules/tooltip';
@@ -19,7 +19,7 @@ import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
 
 // меню (бургер + адаптив)
-showMenu();
+toggleMenu();
 
 // *
 /* 
