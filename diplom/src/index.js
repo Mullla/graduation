@@ -1,4 +1,4 @@
-import showPhone from './modules/phonesList';
+import showPhone from './modules/togglePhone';
 import showMenu from './modules/menu';
 import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
