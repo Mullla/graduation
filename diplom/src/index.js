@@ -24,6 +24,9 @@ import docsSlider from './modules/sliders/docsSlider';
 // список телефонов
 showPhone();
 
+// *
+/*
+
 // меню (бургер + адаптив)
 showMenu();
 
