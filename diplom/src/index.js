@@ -23,6 +23,10 @@ import docsSlider from './modules/sliders/docsSlider';
 // список телефонов
 showPhone();
 
+
+// модальное окно виды ремонта
+popupRepairTypes();
+
 // todo
 /* 
 
@@ -41,8 +45,7 @@ tooltip();
 
 // * modals * //
 
-// модальное окно виды ремонта
-popupRepairTypes();
+
 
 // модальное окно политика конфиденциальности
 popupPrivacy();
