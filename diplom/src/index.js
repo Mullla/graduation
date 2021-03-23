@@ -28,6 +28,8 @@ popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation');
 
+// подгрузка данных 
+getRepairTypes();
 
 // todo
 /*
@@ -57,8 +59,7 @@ accordion();
 // карусель
 carousel();
 
-// подгрузка данных 
-getRepairTypes();
+
 
 // отправка форм
 sendData();
