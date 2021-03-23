@@ -1,5 +1,5 @@
 import showPhone from './modules/togglePhone';
-import showMenu from './modules/menu';
+import toggleMenu from './modules/menu';
 import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
 import tooltip from './modules/tooltip';
@@ -18,7 +18,8 @@ import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
 
-// * ok
+// меню (бургер + адаптив + плавный скролл)
+toggleMenu();
 
 // список телефонов
 showPhone();
