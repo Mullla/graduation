@@ -28,6 +28,9 @@ popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation');
 
+// аккордеон
+accordion();
+
 
 // todo
 /*
@@ -51,8 +54,6 @@ popupSlider();
 // блок с документами при адаптиве становится слайдером
 docsSlider();
 
-// аккордеон
-accordion();
 
 // карусель
 carousel();
