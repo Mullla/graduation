@@ -31,12 +31,13 @@ popupHandler('.button_wide', 'consultation');
 // аккордеон
 accordion();
 
+// маска для телефона
+phoneMask();
 
 // todo
 /*
 
-// маска для телефона
-phoneMask();
+
 
 // подсказка
 tooltip();
