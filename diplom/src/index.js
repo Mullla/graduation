@@ -24,8 +24,20 @@ toggleMenu();
 // список телефонов
 showPhone();
 
+
+// модальное окно виды ремонта
+popupRepairTypes();
+
+
+// меню (бургер + адаптив)
+toggleMenu();
 // todo
-/* 
+
+/*
+
+
+// плавная прокрутка
+smoothScroll();
 
 // маска для телефона
 phoneMask();
@@ -35,8 +47,7 @@ tooltip();
 
 // * modals * //
 
-// модальное окно виды ремонта
-popupRepairTypes();
+
 
 // модальное окно политика конфиденциальности
 popupPrivacy();

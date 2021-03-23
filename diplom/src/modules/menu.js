@@ -52,10 +52,10 @@ const toggleMenu = () => {
                 target = target.closest('a'); 
         
                 //выделяю часть ссылки href = #<...>, чтобы подставить значение <...> и найти элемент по id
-                let id = target.getAttribute('href').substr(1); 
+                let id = target.getAttribute('href'); 
         
                 //скроллю к элементу с заданным id
-                document.getElementById(id).scrollIntoView({ 
+                document.querySelector(id).scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
                 });
