@@ -28,6 +28,8 @@ popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation')
 
+// подсказка
+tooltip();
 
 // todo
 /*
@@ -35,8 +37,7 @@ popupHandler('.button_wide', 'consultation')
 // маска для телефона
 phoneMask();
 
-// подсказка
-tooltip();
+
 
 // * sliders * //
 // слайдер с типами ремонта
