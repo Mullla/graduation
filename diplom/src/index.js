@@ -26,8 +26,10 @@ popupHandler('.link-list', 'repair-types');
 // модальное окно политика конфиденциальности
 popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
-popupHandler('.button_wide', 'consultation')
-
+popupHandler('.button_wide', 'consultation');
+// модальное окно после отправки формы
+// ? будет ли работать, если форма отправлена по enter
+popupHandler('selector','thank');
 
 // todo
 /*
