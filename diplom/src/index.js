@@ -23,9 +23,10 @@ import docsSlider from './modules/sliders/docsSlider';
 // список телефонов
 showPhone();
 
-// todo
-/* 
+// маска для телефона
+phoneMask();
 
+// todo
 /*
 // меню (бургер + адаптив)
 showMenu();
@@ -33,8 +34,7 @@ showMenu();
 // плавная прокрутка
 smoothScroll();
 
-// маска для телефона
-phoneMask();
+
 
 // подсказка
 tooltip();
