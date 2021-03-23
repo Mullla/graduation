@@ -5,8 +5,9 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import sendData from './modules/sendData';
 import popupHandler from './modules/popupHandler';
+import sendForm from './modules/sendForm';
+
 
 // sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
@@ -31,17 +32,35 @@ popupHandler('.button_wide', 'consultation');
 // аккордеон
 accordion();
 
+<<<<<<< HEAD
 // маска для телефона
 phoneMask();
+=======
+// отправка форм
+sendForm();
+>>>>>>> send-formData
 
 // todo
 /*
 
+<<<<<<< HEAD
 
+=======
+// маска для телефона
+phoneMask();
+>>>>>>> send-formData
 
 // подсказка
 tooltip();
 
+<<<<<<< HEAD
+=======
+// * modals * //
+
+// модальное окно политика конфиденциальности
+popupPrivacy();
+
+>>>>>>> send-formData
 // * sliders * //
 // слайдер с типами ремонта
 repairTypesSlider();
@@ -61,8 +80,5 @@ carousel();
 
 // подгрузка данных 
 getRepairTypes();
-
-// отправка форм
-sendData();
 
 */

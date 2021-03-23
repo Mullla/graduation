@@ -35,164 +35,9 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_togglePhone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/togglePhone */ \"./src/modules/togglePhone.js\");\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ \"./src/modules/menu.js\");\n/* harmony import */ var _modules_phoneMask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/phoneMask */ \"./src/modules/phoneMask.js\");\n/* harmony import */ var _modules_tooltip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tooltip */ \"./src/modules/tooltip.js\");\n/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/accordion */ \"./src/modules/accordion.js\");\n/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/carousel */ \"./src/modules/carousel.js\");\n/* harmony import */ var _modules_getRepairTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/getRepairTypes */ \"./src/modules/getRepairTypes.js\");\n/* harmony import */ var _modules_sendData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/sendData */ \"./src/modules/sendData.js\");\n/* harmony import */ var _modules_popupHandler__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/popupHandler */ \"./src/modules/popupHandler.js\");\n/* harmony import */ var _modules_sliders_repairTypesSlider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/sliders/repairTypesSlider */ \"./src/modules/sliders/repairTypesSlider.js\");\n/* harmony import */ var _modules_sliders_portfolioSlider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/sliders/portfolioSlider */ \"./src/modules/sliders/portfolioSlider.js\");\n/* harmony import */ var _modules_sliders_popupSlider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/sliders/popupSlider */ \"./src/modules/sliders/popupSlider.js\");\n/* harmony import */ var _modules_sliders_docsSlider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/sliders/docsSlider */ \"./src/modules/sliders/docsSlider.js\");\n\n\n\n\n\n\n\n\n // sliders\n\n\n\n\n // меню (бургер + адаптив + плавный скролл)\n\n(0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__.default)(); // список телефонов\n\n(0,_modules_togglePhone__WEBPACK_IMPORTED_MODULE_0__.default)(); // * modals * //\n// модальное окно виды ремонта\n\n(0,_modules_popupHandler__WEBPACK_IMPORTED_MODULE_8__.default)('.link-list', 'repair-types'); // модальное окно политика конфиденциальности\n\n(0,_modules_popupHandler__WEBPACK_IMPORTED_MODULE_8__.default)('span.link-privacy', 'privacy'); // модальное окно проконсультироваться\n\n(0,_modules_popupHandler__WEBPACK_IMPORTED_MODULE_8__.default)('.button_wide', 'consultation'); // аккордеон\n\n(0,_modules_accordion__WEBPACK_IMPORTED_MODULE_4__.default)(); // маска для телефона\n\n(0,_modules_phoneMask__WEBPACK_IMPORTED_MODULE_2__.default)(); // todo\n\n/*\n\n\n\n// подсказка\ntooltip();\n\n// * sliders * //\n// слайдер с типами ремонта\nrepairTypesSlider();\n\n// блок с портфолио\nportfolioSlider();\n\n// модальное окно в виде слайдера\npopupSlider();\n\n// блок с документами при адаптиве становится слайдером\ndocsSlider();\n\n\n// карусель\ncarousel();\n\n// подгрузка данных \ngetRepairTypes();\n\n// отправка форм\nsendData();\n\n*/\n\n//# sourceURL=webpack://graduation/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/modules/accordion.js":
-/*!**********************************!*\
-  !*** ./src/modules/accordion.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordion = function accordion() {\n  var faqUl = document.querySelector('.accordion > ul'),\n      faqLi = faqUl.querySelectorAll('li'); // если у h2 активный класс, то блок должен быть раскрыт - ему задается высота\n\n  faqLi.forEach(function (item) {\n    if (item.children[0].classList.contains('msg-active')) {\n      item.children[1].style.height = \"\".concat(item.children[1].scrollHeight, \"px\");\n    }\n  });\n\n  var openAccordion = function openAccordion(title, dropDown) {\n    closeAllDrops(title, dropDown);\n    dropDown.style.height = \"\".concat(dropDown.scrollHeight, \"px\");\n    title.classList.add('msg-active');\n    dropDown.classList.add('active');\n  };\n\n  var closeAccordion = function closeAccordion(title, dropDown) {\n    title.classList.remove('msg-active');\n    dropDown.classList.remove('active');\n    dropDown.style.height = '';\n  }; // закрывает все элементы, кроме тех, которые передали\n\n\n  var closeAllDrops = function closeAllDrops(title, dropDown) {\n    faqLi.forEach(function (item) {\n      if (item.children[0] !== title && item.children[1] !== dropDown) {\n        // передаем те, которые не должны закрываться\n        // если не передать их при вызове, то закроются все\n        closeAccordion(item.children[0], item.children[1]);\n      }\n    });\n  };\n\n  faqUl.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (target.classList.contains('title_block')) {\n      var parent = target.closest('li'),\n          dropDown = parent.querySelector('.msg');\n      dropDown.classList.contains('active') ? closeAccordion(target, dropDown) : openAccordion(target, dropDown);\n    }\n  }); // закрываются все по клику мимо списка\n\n  document.body.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (!target.closest('.accordion > ul')) {\n      closeAllDrops();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordion);\n\n//# sourceURL=webpack://graduation/./src/modules/accordion.js?");
-
-/***/ }),
-
-/***/ "./src/modules/animation.js":
-/*!**********************************!*\
-  !*** ./src/modules/animation.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar animation = function animation(_ref) {\n  var timing = _ref.timing,\n      draw = _ref.draw,\n      duration = _ref.duration;\n  var start = performance.now();\n  requestAnimationFrame(function animation(time) {\n    // timeFraction изменяется от 0 до 1\n    var timeFraction = (time - start) / duration;\n    if (timeFraction > 1) timeFraction = 1; // вычисление текущего состояния анимации\n\n    var progress = timing(timeFraction);\n    draw(progress); // отрисовать её\n\n    if (timeFraction < 1) {\n      requestAnimationFrame(animation);\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (animation);\n\n//# sourceURL=webpack://graduation/./src/modules/animation.js?");
-
-/***/ }),
-
-/***/ "./src/modules/carousel.js":
-/*!*********************************!*\
-  !*** ./src/modules/carousel.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar carousel = function carousel() {\n  console.log('carousel');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (carousel);\n\n//# sourceURL=webpack://graduation/./src/modules/carousel.js?");
-
-/***/ }),
-
-/***/ "./src/modules/getRepairTypes.js":
-/*!***************************************!*\
-  !*** ./src/modules/getRepairTypes.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar getRepairTypes = function getRepairTypes() {\n  console.log('getRepairTypes');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getRepairTypes);\n\n//# sourceURL=webpack://graduation/./src/modules/getRepairTypes.js?");
-
-/***/ }),
-
-/***/ "./src/modules/menu.js":
-/*!*****************************!*\
-  !*** ./src/modules/menu.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar toggleMenu = function toggleMenu() {\n  var blockMenu = document.querySelector('.popup-dialog-menu'); // show menu\n\n  var showMenu = function showMenu() {\n    if (document.documentElement.clientWidth < 576) {\n      // выплывает сверху\n      blockMenu.classList.toggle('showHide-menu');\n    } else {\n      blockMenu.classList.add('showMenu');\n      blockMenu.classList.remove('hideMenu'); // чтобы меню осталось в выдвинутом состоянии\n\n      blockMenu.style.animationFillMode = 'forwards';\n    }\n  }; // close menu\n\n\n  var closeMenu = function closeMenu() {\n    if (document.documentElement.clientWidth < 576) {\n      // выплывает сверху\n      blockMenu.classList.toggle('showHide-menu');\n    } else {\n      blockMenu.classList.remove('showMenu');\n      blockMenu.classList.add('hideMenu');\n    }\n  };\n\n  document.addEventListener('click', function (e) {\n    var target = e.target; // если это иконка меню, то меню открывается\n\n    if (target.closest('.menu__icon')) {\n      showMenu();\n    } else if (target.classList.contains('close-menu') || target.closest('.menu-link') || blockMenu.classList.contains('showMenu') && !target.closest('.showMenu')) {\n      closeMenu();\n    }\n\n    smoothScroll(e);\n  }); // smooth scroll\n\n  var smoothScroll = function smoothScroll(e) {\n    var target = e.target;\n\n    if (target.closest('.popup-menu-nav__item > .menu-link') || target.closest('button>a')) {\n      e.preventDefault(); // отменяю обычный переход по ссылке, чтобы добавить плавный\n\n      target = target.closest('a'); //выделяю часть ссылки href = #<...>, чтобы подставить значение <...> и найти элемент по id\n\n      var id = target.getAttribute('href'); //скроллю к элементу с заданным id\n\n      document.querySelector(id).scrollIntoView({\n        behavior: 'smooth',\n        block: 'start'\n      });\n    }\n  };\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleMenu);\n\n//# sourceURL=webpack://graduation/./src/modules/menu.js?");
-
-/***/ }),
-
-/***/ "./src/modules/phoneMask.js":
-/*!**********************************!*\
-  !*** ./src/modules/phoneMask.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar phoneMask = function phoneMask() {\n  var phoneInputs = document.querySelectorAll('input[name=\"phone\"]');\n\n  var addMask = function addMask(input) {\n    input.addEventListener('input', function () {\n      // все не цифры заменяются пустым символом\n      input.value = input.value.replace(/[\\D]/g, ''); // если пользователь начинает с 7 или 8\n\n      if (input.value.length >= 11) {\n        input.value = input.value.substring(0, 11);\n        input.value = input.value.replace(/(7|8)(\\d{3})(\\d{3})(\\d{2})(\\d{2})/, '+7 ($2) $3-$4-$5'); // если пользователь без 7 или 8\n      } else if (input.value.length === 10 && input.value.slice(0, 1) !== '7' && input.value.slice(0, 1) !== '8') {\n        input.value = input.value.replace(/(\\d{3})(\\d{3})(\\d{2})(\\d{2})/, '+7 ($1) $2-$3-$4');\n      }\n    });\n  };\n\n  phoneInputs.forEach(function (input) {\n    return addMask(input);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (phoneMask);\n\n//# sourceURL=webpack://graduation/./src/modules/phoneMask.js?");
-
-/***/ }),
-
-/***/ "./src/modules/popupHandler.js":
-/*!*************************************!*\
-  !*** ./src/modules/popupHandler.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _animation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation */ \"./src/modules/animation.js\");\n\n\nvar popupHandler = function popupHandler(linkSelector, popupClassName) {\n  var popupLinks = document.querySelectorAll(linkSelector),\n      popupName = document.querySelector(\".popup-\".concat(popupClassName));\n  popupLinks.forEach(function (link) {\n    link.addEventListener('click', function () {\n      popupName.style.visibility = 'visible';\n      (0,_animation__WEBPACK_IMPORTED_MODULE_0__.default)({\n        duration: 500,\n        timing: function timing(timeFraction) {\n          return timeFraction;\n        },\n        draw: function draw(progress) {\n          popupName.style.opacity = progress;\n        }\n      }); // отключает прокрутку заднего фона\n\n      document.body.style.overflow = 'hidden';\n    });\n  }); // закрывает модальное, если клик на кнопку закрыть или вне его\n\n  popupName.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (!target.closest('.popup-content') || target.closest('.close')) {\n      (0,_animation__WEBPACK_IMPORTED_MODULE_0__.default)({\n        duration: 500,\n        timing: function timing(timeFraction) {\n          return timeFraction;\n        },\n        draw: function draw(progress) {\n          popupName.style.opacity = 1 - progress;\n        }\n      });\n      popupName.style.visibility = 'hidden'; // обратно включается прокрутка\n\n      document.body.style.overflow = 'auto';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (popupHandler);\n\n//# sourceURL=webpack://graduation/./src/modules/popupHandler.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sendData.js":
-/*!*********************************!*\
-  !*** ./src/modules/sendData.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar sendData = function sendData() {\n  console.log('sendData');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sendData);\n\n//# sourceURL=webpack://graduation/./src/modules/sendData.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sliders/docsSlider.js":
-/*!*******************************************!*\
-  !*** ./src/modules/sliders/docsSlider.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar docsSlider = function docsSlider() {\n  console.log('docs slider');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (docsSlider);\n\n//# sourceURL=webpack://graduation/./src/modules/sliders/docsSlider.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sliders/popupSlider.js":
-/*!********************************************!*\
-  !*** ./src/modules/sliders/popupSlider.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar popupSlider = function popupSlider() {\n  console.log('popup slider');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (popupSlider);\n\n//# sourceURL=webpack://graduation/./src/modules/sliders/popupSlider.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sliders/portfolioSlider.js":
-/*!************************************************!*\
-  !*** ./src/modules/sliders/portfolioSlider.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar portfolioSlider = function portfolioSlider() {\n  console.log('portfolio slider');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (portfolioSlider);\n\n//# sourceURL=webpack://graduation/./src/modules/sliders/portfolioSlider.js?");
-
-/***/ }),
-
-/***/ "./src/modules/sliders/repairTypesSlider.js":
-/*!**************************************************!*\
-  !*** ./src/modules/sliders/repairTypesSlider.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar repairTypesSlider = function repairTypesSlider() {\n  console.log('repair types slider');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (repairTypesSlider);\n\n//# sourceURL=webpack://graduation/./src/modules/sliders/repairTypesSlider.js?");
-
-/***/ }),
-
-/***/ "./src/modules/togglePhone.js":
-/*!************************************!*\
-  !*** ./src/modules/togglePhone.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar showPhone = function showPhone() {\n  var btnArrow = document.querySelector('.header-contacts__arrow'),\n      bottomPhoneNumber = document.querySelector('.header-contacts__phone-number-accord');\n  btnArrow.addEventListener('click', function () {\n    btnArrow.classList.toggle('header-accord-arrow-active');\n    bottomPhoneNumber.classList.toggle('header-accord-active');\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (showPhone);\n\n//# sourceURL=webpack://graduation/./src/modules/togglePhone.js?");
-
-/***/ }),
-
-/***/ "./src/modules/tooltip.js":
-/*!********************************!*\
-  !*** ./src/modules/tooltip.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar tooltip = function tooltip() {\n  console.log('tooltip');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tooltip);\n\n//# sourceURL=webpack://graduation/./src/modules/tooltip.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/mars/Documents/dev/glo/graduation/diplom/src/index.js: Unexpected token (8:0)\\n\\n\\u001b[0m \\u001b[90m  6 |\\u001b[39m \\u001b[36mimport\\u001b[39m carousel \\u001b[36mfrom\\u001b[39m \\u001b[32m'./modules/carousel'\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  7 |\\u001b[39m \\u001b[36mimport\\u001b[39m getRepairTypes \\u001b[36mfrom\\u001b[39m \\u001b[32m'./modules/getRepairTypes'\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m  8 |\\u001b[39m \\u001b[33m<<\\u001b[39m\\u001b[33m<<\\u001b[39m\\u001b[33m<<\\u001b[39m\\u001b[33m<\\u001b[39m \\u001b[33mHEAD\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m    |\\u001b[39m \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  9 |\\u001b[39m \\u001b[36mimport\\u001b[39m sendData \\u001b[36mfrom\\u001b[39m \\u001b[32m'./modules/sendData'\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 10 |\\u001b[39m \\u001b[36mimport\\u001b[39m popupHandler \\u001b[36mfrom\\u001b[39m \\u001b[32m'./modules/popupHandler'\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 11 |\\u001b[39m \\u001b[33m===\\u001b[39m\\u001b[33m===\\u001b[39m\\u001b[33m=\\u001b[39m\\u001b[0m\\n    at Parser._raise (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:775:17)\\n    at Parser.raiseWithData (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:768:17)\\n    at Parser.raise (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:736:17)\\n    at Parser.unexpected (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:9699:16)\\n    at Parser.parseExprAtom (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:11091:20)\\n    at Parser.parseExprSubscripts (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:10668:23)\\n    at Parser.parseUpdate (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:10648:21)\\n    at Parser.parseMaybeUnary (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:10626:23)\\n    at Parser.parseExprOps (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:10487:23)\\n    at Parser.parseMaybeConditional (/Users/mars/Documents/dev/glo/graduation/diplom/node_modules/@babel/parser/lib/index.js:10461:23)\");\n\n//# sourceURL=webpack://graduation/./src/index.js?");
 
 /***/ }),
 
@@ -528,18 +373,6 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -557,17 +390,6 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -581,7 +403,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
 /******/ 	__webpack_require__("./src/index.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./node_modules/webpack-dev-server/client/index.js?http://localhost:9000");
 /******/ 	
