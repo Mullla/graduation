@@ -45,7 +45,6 @@ const popupRepairTypes = () => {
             // обратно включается прокрутка
             document.body.style.overflow = 'auto';
         }
-                
     });
 
     

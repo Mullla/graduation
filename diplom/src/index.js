@@ -1,6 +1,5 @@
 import showPhone from './modules/togglePhone';
 import toggleMenu from './modules/menu';
-import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
 import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
@@ -24,20 +23,16 @@ toggleMenu();
 // список телефонов
 showPhone();
 
-
 // модальное окно виды ремонта
 popupRepairTypes();
 
-
 // меню (бургер + адаптив)
 toggleMenu();
-// todo
 
+
+// todo
 /*
 
-
-// плавная прокрутка
-smoothScroll();
 
 // маска для телефона
 phoneMask();
