@@ -32,35 +32,19 @@ popupHandler('.button_wide', 'consultation');
 // аккордеон
 accordion();
 
-<<<<<<< HEAD
 // маска для телефона
 phoneMask();
-=======
+
 // отправка форм
 sendForm();
->>>>>>> send-formData
 
 // todo
 /*
 
-<<<<<<< HEAD
-
-=======
-// маска для телефона
-phoneMask();
->>>>>>> send-formData
 
 // подсказка
 tooltip();
 
-<<<<<<< HEAD
-=======
-// * modals * //
-
-// модальное окно политика конфиденциальности
-popupPrivacy();
-
->>>>>>> send-formData
 // * sliders * //
 // слайдер с типами ремонта
 repairTypesSlider();
@@ -73,7 +57,6 @@ popupSlider();
 
 // блок с документами при адаптиве становится слайдером
 docsSlider();
-
 
 // карусель
 carousel();
