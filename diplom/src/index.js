@@ -38,6 +38,9 @@ phoneMask();
 // отправка форм
 sendForm();
 
+// подгрузка данных 
+getRepairTypes();
+
 // todo
 /*
 
@@ -61,7 +64,6 @@ docsSlider();
 // карусель
 carousel();
 
-// подгрузка данных 
-getRepairTypes();
+
 
 */
