@@ -42,6 +42,8 @@ const popupRepairTypes = () => {
             });
 
             popupRepairTypes.style.visibility = 'hidden';
+            // обратно включается прокрутка
+            document.body.style.overflow = 'auto';
         }
                 
     });

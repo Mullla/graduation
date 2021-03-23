@@ -1,5 +1,5 @@
 import showPhone from './modules/togglePhone';
-import showMenu from './modules/menu';
+import toggleMenu from './modules/menu';
 import smoothScroll from './modules/smoothScroll';
 import phoneMask from './modules/phoneMask';
 import tooltip from './modules/tooltip';
@@ -27,12 +27,13 @@ showPhone();
 // модальное окно виды ремонта
 popupRepairTypes();
 
+
+// меню (бургер + адаптив)
+toggleMenu();
 // todo
-/* 
 
 /*
-// меню (бургер + адаптив)
-showMenu();
+
 
 // плавная прокрутка
 smoothScroll();
