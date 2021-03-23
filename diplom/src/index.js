@@ -30,14 +30,11 @@ popupHandler('span.link-privacy', 'privacy');
 // todo
 /*
 
-
 // маска для телефона
 phoneMask();
 
 // подсказка
 tooltip();
-
-
 
 // * sliders * //
 // слайдер с типами ремонта
