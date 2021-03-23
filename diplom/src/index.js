@@ -5,7 +5,7 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import sendData from './modules/sendData';
+import sendForm from './modules/sendForm';
 
 // popups
 import popupRepairTypes from './modules/popups/repairTypes';
@@ -29,10 +29,11 @@ popupRepairTypes();
 // меню (бургер + адаптив)
 toggleMenu();
 
+// отправка форм
+sendForm();
 
 // todo
 /*
-
 
 // маска для телефона
 phoneMask();
@@ -41,8 +42,6 @@ phoneMask();
 tooltip();
 
 // * modals * //
-
-
 
 // модальное окно политика конфиденциальности
 popupPrivacy();
@@ -68,8 +67,5 @@ carousel();
 
 // подгрузка данных 
 getRepairTypes();
-
-// отправка форм
-sendData();
 
 */
