@@ -29,7 +29,7 @@ const popupHandler = (linkSelector, popupClassName) => {
     popupName.addEventListener('click', e => {
         const target = e.target;
 
-        if( !target.closest('.popup-dialog') || target.closest('.close') ){
+        if( !target.closest('.popup-content') || target.closest('.close') ){
 
             animation({
                 duration: 500,
