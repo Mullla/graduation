@@ -6,10 +6,7 @@ import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
 import sendData from './modules/sendData';
-
-// popups
-import popupRepairTypes from './modules/popups/repairTypes';
-import popupPrivacy from './modules/popups/privacy';
+import popupHandler from './modules/popupHandler';
 
 // sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
@@ -23,11 +20,11 @@ toggleMenu();
 // список телефонов
 showPhone();
 
+// * modals * //
 // модальное окно виды ремонта
-popupRepairTypes();
-
-// меню (бургер + адаптив)
-toggleMenu();
+popupHandler('.link-list', 'repair-types');
+// модальное окно политика конфиденциальности
+popupHandler('span.link-privacy', 'privacy');
 
 
 // todo
@@ -40,12 +37,7 @@ phoneMask();
 // подсказка
 tooltip();
 
-// * modals * //
 
-
-
-// модальное окно политика конфиденциальности
-popupPrivacy();
 
 // * sliders * //
 // слайдер с типами ремонта
