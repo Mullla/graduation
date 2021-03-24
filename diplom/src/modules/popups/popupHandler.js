@@ -1,4 +1,4 @@
-import animation from './animation';
+import animation from '../animation';
 
 const popupHandler = (itemSelector, popupClassName) => {
     const popupName = document.querySelector(`.popup-${popupClassName}`);

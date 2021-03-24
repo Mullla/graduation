@@ -5,7 +5,7 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import popupHandler from './modules/popupHandler';
+import popupHandler from './modules/popups/popupHandler';
 import sendForm from './modules/sendForm';
 
 
