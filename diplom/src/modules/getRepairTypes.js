@@ -1,5 +1,5 @@
 const getRepairTypes = () => {
-    const url = '../db/db.json';
+    const url = './db/db.json';
     // info получаем данные из json-файла
     const getData = (url, render, changeTabs) => {
         

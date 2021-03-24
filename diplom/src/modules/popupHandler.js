@@ -1,29 +1,35 @@
 import animation from './animation';
 
-const popupHandler = (linkSelector, popupClassName) => {
-    const popupLinks = document.querySelectorAll(linkSelector),
-        popupName = document.querySelector(`.popup-${popupClassName}`);
+const popupHandler = (itemSelector, popupClassName) => {
+    const popupName = document.querySelector(`.popup-${popupClassName}`);
 
-        popupLinks.forEach( link => {
-            link.addEventListener('click', () => {
+    if (typeof itemSelector === 'object'){
+        openPopup();
+    } else {
+        const popupTargets = document.querySelectorAll(itemSelector);
+        popupTargets.forEach( item => {
+            item.addEventListener('click', openPopup)
+        });
+    }
 
-                popupName.style.visibility = 'visible';
+    function openPopup() {
+            popupName.style.visibility = 'visible';
 
-                animation({
-                    duration: 500,
-                    timing(timeFraction){
-                        return timeFraction;
-                    },
-                    draw(progress){
-                        popupName.style.opacity = progress;
-                    }
-                });
-
-                // отключает прокрутку заднего фона
-                document.body.style.overflow = 'hidden';
+            animation({
+                duration: 500,
+                timing(timeFraction){
+                    return timeFraction;
+                },
+                draw(progress){
+                    popupName.style.opacity = progress;
+                }
             });
-    });
 
+            // отключает прокрутку заднего фона
+            document.body.style.overflow = 'hidden';
+    }
+
+    
 
     // закрывает модальное, если клик на кнопку закрыть или вне его
     popupName.addEventListener('click', e => {

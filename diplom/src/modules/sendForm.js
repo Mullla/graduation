@@ -1,3 +1,5 @@
+import popupHandler from './popupHandler';
+
 const sendForm = () => {
     // сообщения для пользователя
     const errorMessage = 'Что-то пошло не так...',
@@ -35,6 +37,7 @@ const sendForm = () => {
                         throw new Error(`status network ${response.status}`);
                     }
 
+                    popupHandler(form, 'thank');
                     statusMessage.textContent = successMessage;
 
                     // через 3-5 секунд сообщение пропадает
@@ -52,8 +55,6 @@ const sendForm = () => {
         });
 
     });
-
-
 
     // функция работает только с запросом, принимает body
     const postData = (body) => {

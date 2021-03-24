@@ -4,8 +4,6 @@ const scheme = () => {
         tabsContent = document.querySelectorAll('.scheme-description-block'),
         tabsImg = document.querySelectorAll('.scheme-slider__slide');
 
-    console.log(tabsImg)
-
         const toggleTabsContent = (index) => {
             for (let i = 0; i < tabsContent.length; i++) {
                 if (index === i){
