@@ -13,7 +13,7 @@ import sendForm from './modules/sendForm';
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
-import docsSlider from './modules/sliders/docsSlider';
+import slider from './modules/sliders/docsSlider';
 import reviews from './modules/sliders/reviews';
 
 // * tabs
@@ -49,7 +49,7 @@ getRepairTypes();
 // слайдер с отзывами
 reviews();
 // блок с документами при адаптиве становится слайдером
-docsSlider();
+slider('transparency', 'show', 'hide');
 
 // * tabs * //
 scheme();
