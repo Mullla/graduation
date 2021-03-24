@@ -11,7 +11,7 @@ import sendForm from './modules/sendForm';
 
 // * popups
 import popupTransparency from './modules/popups/popupTransparency';
-import popupHandler from './modules/popupHandler';
+import popupHandler from './modules/popups/popupHandler';
 
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
