@@ -7,7 +7,7 @@ import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
 import popupHandler from './modules/popupHandler';
 import sendForm from './modules/sendForm';
-import popupTransparency from './modules/popupTransparency';
+import popupTransparency from './modules/popups/popupTransparency';
 
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
