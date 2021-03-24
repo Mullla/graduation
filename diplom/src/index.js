@@ -54,6 +54,10 @@ slider('transparency', 'show', 'mobileHidden');
 // * tabs * //
 scheme();
 
+// слайдер с типами ремонта
+repairTypesSlider();
+
+
 // todo
 /*
 
@@ -62,8 +66,6 @@ scheme();
 tooltip();
 
 // * sliders * //
-// слайдер с типами ремонта
-repairTypesSlider();
 
 // блок с портфолио
 portfolioSlider();
