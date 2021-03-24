@@ -49,7 +49,7 @@ getRepairTypes();
 // слайдер с отзывами
 reviews();
 // блок с документами при адаптиве становится слайдером
-slider('transparency', 'show', 'hide');
+slider('transparency', 'show', 'mobileHidden');
 
 // * tabs * //
 scheme();
