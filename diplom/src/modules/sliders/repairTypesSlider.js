@@ -11,8 +11,6 @@ const repairTypesSlider = () => {
                     tabsContent[i].classList.remove('hide');
                     tabs[i].classList.add('active');
 
-                    imageSlider(tabsContent[i]);
-
                 } else {
                     tabsContent[i].classList.remove('show');
                     tabsContent[i].classList.add('hide');
@@ -35,7 +33,8 @@ const repairTypesSlider = () => {
                 }
         });
 
-        
+        tabsContent.forEach( elem => imageSlider(elem));
+
     }
 
     const imageSlider = (sliderWrapper) => {
@@ -45,6 +44,7 @@ const repairTypesSlider = () => {
             counter = repairCounter.querySelector('.slider-counter-content__current'),
             total = repairCounter.querySelector('.slider-counter-content__total');
 
+        counter.textContent = 1;
         total.textContent = slides.length;
 
         let currentSlide = 0; // текущий слайд
@@ -91,7 +91,6 @@ const repairTypesSlider = () => {
                 // добавляем активный класс слайду, у которого выполняется условие
                 nextSlide(slides, currentSlide, 'hide');
         });
-
 
     }
 
