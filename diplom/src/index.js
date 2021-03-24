@@ -5,13 +5,12 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-
 import sendForm from './modules/sendForm';
-
+import design from './modules/design';
 
 // * popups
 import popupTransparency from './modules/popups/popupTransparency';
-import popupHandler from './modules/popupHandler';
+import popupHandler from './modules/popups/popupHandler';
 
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
@@ -60,7 +59,7 @@ slider('transparency', 'show', 'mobileHidden');
 // * tabs * //
 scheme();
 
-
+design();
 // todo
 /*
 

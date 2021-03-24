@@ -1151,31 +1151,34 @@
       </div><!-- /design-nav-wrap -->
       <div class="designs-slider-wrap">
         <div class="designs-slider">
-          <div class="designs-slider__style1">
+          <div class="designs-slider__style1 design-slider__style">
             <div class="designs-slider__style-slide scand"><img src="./images/designs/item1.jpg" alt=""></div>
             <div class="designs-slider__style-slide scand"><img src="./images/designs/item2.jpg" alt=""></div>
             <div class="designs-slider__style-slide scand"><img src="./images/designs/item3.jpg" alt=""></div>
           </div><!-- /slide-style scand-->
-          <div class="designs-slider__style2">
+          <div class="designs-slider__style2 design-slider__style">
             <div class="designs-slider__style-slide trad"><img src="./images/designs/trad_item1.jpg" alt=""></div>
             <div class="designs-slider__style-slide trad"><img src="./images/designs/trad_item2.jpg" alt=""></div>
           </div><!-- /slide-style traditional-->
-          <div class="designs-slider__style3">
+          <div class="designs-slider__style3 design-slider__style">
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft1.jpg" alt=""></div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft2.jpg" alt=""></div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft3.jpg" alt=""></div>
             <div class="designs-slider__style-slide loft"><img src="./images/designs/loft4.jpg" alt=""></div>
           </div><!-- /slide-style loft-->
-          <div class="designs-slider__style4">
+          <div class="designs-slider__style4 design-slider__style">
             <div class="designs-slider__style-slide minimal"><img src="./images/designs/item2.jpg" alt=""></div>
             <div class="designs-slider__style-slide minimal"><img src="./images/designs/item1.jpg" alt=""></div>
             <div class="designs-slider__style-slide minimal"><img src="./images/designs/item2.jpg" alt=""></div>
           </div><!-- /slide-style minimal-->
-          <div class="designs-slider__style5">
+          <div class="designs-slider__style5 design-slider__style">
             <div class="designs-slider__style-slide modern"><img src="./images/designs/item1.jpg" alt=""></div>
             <div class="designs-slider__style-slide modern"><img src="./images/designs/item2.jpg" alt=""></div>
             <div class="designs-slider__style-slide modern"><img src="./images/designs/item1.jpg" alt=""></div>
-          </div><!-- /slide-style modern--></div><!-- /designs-slider -->
+          </div>
+          <!-- /slide-style modern-->
+        </div>
+        <!-- /designs-slider -->
         <div class="slider-counter slider-counter-responsive desktop-hide" id="designs-counter">
           <div class="slider-counter-content">
             <div class="slider-counter-content__current">1</div>
@@ -1196,7 +1199,8 @@
                   stroke-linejoin="round"></path>
           </svg>
         </div>
-      </div><!-- /designs-slider-wrap -->
+      </div>
+      <!-- /designs-slider-wrap -->
       <div class="preview-block visible">
         <div class="preview-block__item">
           <div class="preview-block__item-inner scand preview_active">Интерьер 1</div>
@@ -1207,7 +1211,8 @@
         <div class="preview-block__item">
           <div class="preview-block__item-inner scand">Интерьер 3</div>
           <img src="./images/designs/item3_preview.jpg" alt=""></div>
-      </div><!-- preview scand -->
+      </div>
+      <!-- preview scand -->
       <div class="preview-block">
         <div class="preview-block__item">
           <div class="preview-block__item-inner trad preview_active">Интерьер 1</div>
@@ -1215,7 +1220,8 @@
         <div class="preview-block__item">
           <div class="preview-block__item-inner trad">Интерьер 2</div>
           <img src="./images/designs/trad_item2_preview.jpg" alt=""></div>
-      </div><!-- preview trad -->
+      </div>
+      <!-- preview trad -->
       <div class="preview-block">
         <div class="preview-block__item">
           <div class="preview-block__item-inner loft preview_active">Интерьер 1</div>
@@ -1229,7 +1235,8 @@
         <div class="preview-block__item">
           <div class="preview-block__item-inner loft">Интерьер 4</div>
           <img src="./images/designs/loft4_preview.jpg" alt=""></div>
-      </div><!-- preview loft -->
+      </div>
+      <!-- preview loft -->
       <div class="preview-block minimal">
         <div class="preview-block__item">
           <div class="preview-block__item-inner minimal preview_active">Интерьер 1</div>
@@ -1240,7 +1247,8 @@
         <div class="preview-block__item">
           <div class="preview-block__item-inner minimal">Интерьер 3</div>
           <img src="./images/designs/item1_prevew.jpg" alt=""></div>
-      </div><!-- preview minimal -->
+      </div>
+      <!-- preview minimal -->
       <div class="preview-block modern">
         <div class="preview-block__item">
           <div class="preview-block__item-inner modern preview_active">Интерьер 1</div>
@@ -1251,7 +1259,8 @@
         <div class="preview-block__item">
           <div class="preview-block__item-inner modern">Интерьер 3</div>
           <img src="./images/designs/item1_prevew.jpg" alt=""></div>
-      </div><!-- preview modern -->
+      </div>
+      <!-- preview modern -->
       <div class="link-list-designs"><a>Посмотреть описание работ
         <svg width="13" height="11" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -1408,17 +1417,11 @@
       <div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
       <form class="feedback-block__form" id="feedback4"><label><span><sup>*</sup>Введите ваше имя:</span> <input
           type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-          maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-                                                                                            class="feedback-block__form-input feedback-block__form-input_phone"
-                                                                                            name="phone"
-                                                                                            id="feedback-input4"
-                                                                                            required=""
-                                                                                            placeholder="+7 (___)___-__-__"
-                                                                                            minlength="18"></label>
+          maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> 
+            <input type="text" class="feedback-block__form-input feedback-block__form-input_phone" name="phone" id="feedback-input4" required placeholder="+7 (___)___-__-__" minlength="18"></label>
         <button class="button button-feedback-block">Перезвоните мне</button>
-        <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox4"
-                                                            required=""> <label class="checkbox__label"
-                                                                                for="checkbox4"></label>
+        <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox4"> 
+          <label class="checkbox__label" for="checkbox4"></label>
           <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <span class="link-privacy">обработку своих персональных данных</span>
           </div>
         </div>
@@ -2866,7 +2869,7 @@
               fill="#322823" fill-opacity=".5"></path>
       </svg>
     </div>
-    <div class="popup-dialog popup-dialog-design">
+    <div class="popup-dialog popup-dialog-design popup-content">
       <div class="nav-wrap">
         <nav class="nav nav-designs nav-popup">
           <div class="nav-list nav-list-designs transparancy-cut" id="nav-list-popup-designs">
@@ -2943,29 +2946,29 @@
               </svg>
             </div>
             <div class="popup-design-slider">
-              <div class="popup-designs-slider__style1">
+              <div class="popup-designs-slider__style1 popup-designs-slider__style">
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style2">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
-              </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style3">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style2 popup-designs-slider__style">
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style4">
-                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              <div class="popup-designs-slider__style3 popup-designs-slider__style">
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
               </div><!-- /slide-style scand-->
-              <div class="popup-designs-slider__style5">
+              <div class="popup-designs-slider__style4 popup-designs-slider__style">
+                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+                <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
+              </div><!-- /slide-style scand-->
+              <div class="popup-designs-slider__style5 popup-designs-slider__style">
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
                 <div class="popup-design-slider__style-slide"><img src="./images/popup/design-slide1.jpg" alt=""></div>
@@ -3000,7 +3003,8 @@
                 стиля — белый цвет, простота, светлое дерево, не насыщенные (грязные) акцентные цвета. Хотя он относится к
                 современным направлениям, некоторый предметы могут быть в ретро-стилистике.</p>
               <p>В отличие он минимализма, допускает</p></div>
-          </div><!-- /popup-design-text -->
+          </div>
+          <!-- /popup-design-text -->
           <div class="popup-design-text">
             <div class="popup-design-text__title">Традиционный стиль</div>
             <div class="popup-design-text__descr"><p>Традиционный стиль один из лучших стилей современности, на данный
@@ -3040,8 +3044,13 @@
                 стиля — белый цвет, простота, светлое дерево, не насыщенные (грязные) акцентные цвета. Хотя он относится к
                 современным направлениям, некоторый предметы могут быть в ретро-стилистике.</p>
               <p>В отличие он минимализма, допускает</p></div>
-          </div><!-- /popup-design-text --></div><!-- /popup-design-slider --></div><!-- /popup-design-tab__item row-->
-    </div><!-- /popup-design-tab -->
+          </div>
+          <!-- /popup-design-text -->
+        </div><!-- /popup-design-slider -->
+      </div>
+      <!-- /popup-design-tab__item row-->
+    </div>
+    <!-- /popup-design-tab -->
   </div>
     <!-- /popup-design -->
     
