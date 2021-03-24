@@ -9,12 +9,15 @@ import popupHandler from './modules/popupHandler';
 import sendForm from './modules/sendForm';
 
 
-// sliders
+// * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
 import reviews from './modules/sliders/reviews';
+
+// * tabs
+import scheme from './modules/tabs/scheme';
 
 // меню (бургер + адаптив + плавный скролл)
 toggleMenu();
@@ -44,6 +47,9 @@ getRepairTypes();
 // * sliders * //
 // слайдер с отзывами
 reviews();
+
+// * tabs * //
+scheme();
 
 // todo
 /*
