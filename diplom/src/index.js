@@ -5,14 +5,19 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import sendData from './modules/sendData';
 import popupHandler from './modules/popupHandler';
+import sendForm from './modules/sendForm';
 
-// sliders
+
+// * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
+import reviews from './modules/sliders/reviews';
+
+// * tabs
+import scheme from './modules/tabs/scheme';
 
 // меню (бургер + адаптив + плавный скролл)
 toggleMenu();
@@ -27,15 +32,28 @@ popupHandler('.link-list', 'repair-types');
 popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation');
-// модальное окно после отправки формы
-// ? будет ли работать, если форма отправлена по enter
-popupHandler('selector','thank');
+
+// аккордеон
+accordion();
+
+// маска для телефона
+phoneMask();
+
+// отправка форм
+sendForm();
+
+// подгрузка данных 
+getRepairTypes();
+// * sliders * //
+// слайдер с отзывами
+reviews();
+
+// * tabs * //
+scheme();
 
 // todo
 /*
 
-// маска для телефона
-phoneMask();
 
 // подсказка
 tooltip();
@@ -53,16 +71,9 @@ popupSlider();
 // блок с документами при адаптиве становится слайдером
 docsSlider();
 
-// аккордеон
-accordion();
-
 // карусель
 carousel();
 
-// подгрузка данных 
-getRepairTypes();
 
-// отправка форм
-sendData();
 
 */

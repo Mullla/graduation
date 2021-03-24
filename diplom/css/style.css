@@ -3008,7 +3008,8 @@ div.wave-block:nth-child(17):after {
       z-index: -1; } }
   .reviews-slider {
     height: 314px;
-    overflow: hidden; }
+    overflow: hidden;
+    display: flex }
     .reviews-slider-wrap {
       position: relative;
       max-width: 494px;
@@ -3021,7 +3022,7 @@ div.wave-block:nth-child(17):after {
     .reviews-slider__slide {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex;
+      display: none;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -3032,6 +3033,12 @@ div.wave-block:nth-child(17):after {
       text-align: center;
       color: #322823;
       min-height: 100%; }
+      .reviews-slide-active{
+        display: flex;
+      }
+      .slider-dots-reviews{
+        display: flex;
+      }
       .reviews-slider__slide-img {
         position: relative;
         width: 139px;
@@ -3110,6 +3117,7 @@ div.wave-block:nth-child(17):after {
     .scheme-nav__item:nth-child(6) {
       min-width: 131px; }
   .scheme-slider {
+    display: flex;
     height: 593px;
     margin-top: 32px;
     background: #C4C4C4;
@@ -3124,6 +3132,7 @@ div.wave-block:nth-child(17):after {
     .scheme-slider-wrap {
       position: relative; }
     .scheme-slider__slide {
+      display: none;
       position: relative;
       overflow: hidden; }
       @media (max-width: 575px) {
@@ -6481,3 +6490,52 @@ strong {
 
 .slider-dots {
   display: none; }
+
+  .spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+  }
+  
+  .dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+    border-radius: 100%;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
