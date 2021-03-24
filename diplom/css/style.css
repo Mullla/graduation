@@ -3009,7 +3009,7 @@ div.wave-block:nth-child(17):after {
   .reviews-slider {
     height: 314px;
     overflow: hidden;
-    display: flex }
+    display: block }
     .reviews-slider-wrap {
       position: relative;
       max-width: 494px;
