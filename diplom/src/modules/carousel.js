@@ -1,7 +1,7 @@
 const carousel = () => {
     const partnersBlock = document.querySelector('.wrapper'),
-        partnersSlider = document.querySelector('.reviews-slider-wrap'),
-        partnersSlides = reviewsSlider.querySelectorAll('.reviews-slider__slide');
+        partnersSlider = document.querySelector('.partners-slider'),
+        partnersSlides = partnersSlider.querySelectorAll('.partners-slider__slide');
     
         let currentSlide = 0; // текущий слайд
     
@@ -13,46 +13,37 @@ const carousel = () => {
             elem[index].classList.add(strClass);
         };
     
-        reviewsBlock.addEventListener('click', (e) => {
+        partnersBlock.addEventListener('click', (e) => {
                 e.preventDefault();
     
                 let target = e.target;
     
                 // если клик не по этим селекторам, событие не срабатывает
                 // closest - чтобы можно было кликать по стрелкам svg и все работало
-                if (!target.matches('.dot-reviews') 
-                && !target.closest('#reviews-arrow_left')
-                && !target.closest('#reviews-arrow_right')) { 
+                if (!target.closest('#partners-arrow_left')
+                && !target.closest('#partners-arrow_right')) { 
                     return;
                 }
                 // убираем активный класс у текущего слайда
-                prevSlide(reviewsSlides, currentSlide, 'reviews-slide-active');
-                prevSlide(dots, currentSlide, 'dot_active');
+                prevSlide(partnersSlides, currentSlide, 'reviews-slide-active');
     
                 if (target.closest('#reviews-arrow_right')) { 
                     currentSlide++;
                 } else if (target.closest('#reviews-arrow_left')) { 
                     currentSlide--;
-                } else if (target.matches('.dot-reviews')){
-                    dots.forEach((elem, index) => {
-                        if (elem === target){
-                            currentSlide = index;
-                        }
-                    });
-                }
+                } 
     
                 // если слайд был последний, то переходит к первому
-                if (currentSlide >= reviewsSlides.length){
+                if (currentSlide >= partnersSlides.length){
                     currentSlide = 0;
                 } 
                 // если слайд был первый, то переходит к последнему
                 if (currentSlide < 0) {
-                    currentSlide = reviewsSlides.length-1;
+                    currentSlide = partnersSlides.length-1;
                 }
     
                 // добавляем активный класс слайду, у которого выполняется условие
-                nextSlide(reviewsSlides, currentSlide, 'reviews-slide-active');
-                nextSlide(dots, currentSlide, 'dot_active');
+                nextSlide(partnersSlides, currentSlide, 'reviews-slide-active');
         });
     
 }

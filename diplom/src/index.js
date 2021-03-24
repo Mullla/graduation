@@ -44,9 +44,11 @@ sendForm();
 
 // подгрузка данных 
 getRepairTypes();
+
 // * sliders * //
 // слайдер с отзывами
 reviews();
+carousel();
 
 // * tabs * //
 scheme();
