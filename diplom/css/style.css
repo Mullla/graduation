@@ -3008,7 +3008,8 @@ div.wave-block:nth-child(17):after {
       z-index: -1; } }
   .reviews-slider {
     height: 314px;
-    overflow: hidden; }
+    overflow: hidden;
+    display: flex }
     .reviews-slider-wrap {
       position: relative;
       max-width: 494px;
@@ -3021,7 +3022,7 @@ div.wave-block:nth-child(17):after {
     .reviews-slider__slide {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex;
+      display: none;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -3032,6 +3033,12 @@ div.wave-block:nth-child(17):after {
       text-align: center;
       color: #322823;
       min-height: 100%; }
+      .reviews-slide-active{
+        display: flex;
+      }
+      .slider-dots-reviews{
+        display: flex;
+      }
       .reviews-slider__slide-img {
         position: relative;
         width: 139px;

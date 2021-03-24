@@ -1305,8 +1305,9 @@
               fill="#322823"></path>
         </svg>
       </div>
+
       <div class="reviews-slider">
-        <div class="reviews-slider__slide">
+        <div class="reviews-slider__slide reviews-slide-active">
           <div class="reviews-slider__slide-img"><img src="./images/reviews/ava1.jpg" alt=""></div>
           <div class="reviews-slider__slide-date">05.02.2019</div>
           <div class="reviews-slider__slide-title">Анютка Дюгурова</div>
@@ -1346,8 +1347,13 @@
             ключ* в моей однокомнатной квартире. Предварительная смета была расписана подробно, понятно по каждому виду
             работ. Фактическая смета ... <a class="link-reviews-detail">Подробнее</a></div>
         </div>
-      </div><!-- /reviews-slider --></div>
-    <div class="slider-dots slider-dots-reviews slider-dots-base">
+      </div>
+      <!-- /reviews-slider -->
+
+    </div>
+
+    <!-- <div class="slider-dots slider-dots-reviews slider-dots-base">
+
       <div class="dot dot-reviews switch dot_active">
         <div class="dot__inner"></div>
       </div>
@@ -1363,7 +1369,8 @@
       <div class="dot dot-reviews switch">
         <div class="dot__inner"></div>
       </div>
-    </div>
+      
+    </div> -->
     <!-- /slider-dots_gray -->
   </div>
   <!-- /reviews -->
@@ -1679,18 +1686,12 @@
       </div>
       <div class="feedback-block__descr">Обсудите проект со специалистом или вызовите замерщика.</div>
       <form class="feedback-block__form" id="feedback5"><label><span><sup>*</sup>Введите ваше имя:</span> <input
-          type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required=""
-          maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text"
-                                                                                            class="feedback-block__form-input feedback-block__form-input_phone"
-                                                                                            name="phone"
-                                                                                            id="feedback-input5"
-                                                                                            required=""
-                                                                                            placeholder="+7 (___)___-__-__"
-                                                                                            minlength="18"></label>
+          type="text" class="feedback-block__form-input feedback-block__form-input_name" name="name" required
+          maxlength="20"></label> <label><span><sup>*</sup>Введите ваш номер:</span> <input type="text" class="feedback-block__form-input feedback-block__form-input_phone" name="phone" id="feedback-input5" required placeholder="+7 (___)___-__-__" minlength="18"></label>
         <button class="button button-feedback-block">Перезвоните мне</button>
-        <div class="checkbox checkbox-feedback-block"><input class="checkbox__input" type="checkbox" id="checkbox5"
-                                                            required=""> <label class="checkbox__label"
-                                                                                for="checkbox5"></label>
+        <div class="checkbox checkbox-feedback-block">
+          <input class="checkbox__input" type="checkbox" id="checkbox5" required> 
+          <label class="checkbox__label" for="checkbox5"></label>
           <div class="checkbox__descr">Нажимая на кнопку, Вы даете согласие на <span class="link-privacy">обработку своих персональных данных</span>
           </div>
         </div>

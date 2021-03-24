@@ -14,6 +14,7 @@ import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
 import docsSlider from './modules/sliders/docsSlider';
+import reviews from './modules/sliders/reviews';
 
 // меню (бургер + адаптив + плавный скролл)
 toggleMenu();
@@ -40,6 +41,8 @@ sendForm();
 
 // подгрузка данных 
 getRepairTypes();
+
+reviews();
 
 // todo
 /*
