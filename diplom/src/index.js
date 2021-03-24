@@ -7,7 +7,7 @@ import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
 import popupHandler from './modules/popupHandler';
 import sendForm from './modules/sendForm';
-
+import popupTransparency from './modules/popupTransparency';
 
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
@@ -53,6 +53,9 @@ slider('transparency', 'show', 'mobileHidden');
 
 // * tabs * //
 scheme();
+
+popupTransparency();
+
 
 // todo
 /*
