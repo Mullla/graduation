@@ -44,12 +44,17 @@ sendForm();
 
 // подгрузка данных 
 getRepairTypes();
+
 // * sliders * //
 // слайдер с отзывами
 reviews();
 
 // * tabs * //
 scheme();
+
+// блок с портфолио
+portfolioSlider();
+
 
 // todo
 /*
@@ -62,8 +67,7 @@ tooltip();
 // слайдер с типами ремонта
 repairTypesSlider();
 
-// блок с портфолио
-portfolioSlider();
+
 
 // модальное окно в виде слайдера
 popupSlider();
