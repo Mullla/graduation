@@ -13,7 +13,7 @@ import sendForm from './modules/sendForm';
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
-import slider from './modules/sliders/docsSlider';
+import slider from './modules/sliders/slider';
 import reviews from './modules/sliders/reviews';
 
 // * tabs
