@@ -1,7 +1,8 @@
 import showPhone from './modules/togglePhone';
 import toggleMenu from './modules/menu';
 import phoneMask from './modules/phoneMask';
-import tooltip from './modules/tooltip';
+import formula from './modules/formula';
+import partners from './modules/partners';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
@@ -15,7 +16,6 @@ import popupHandler from './modules/popups/popupHandler';
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
-import popupSlider from './modules/sliders/popupSlider';
 import slider from './modules/sliders/slider';
 import reviews from './modules/sliders/reviews';
 
@@ -39,7 +39,9 @@ popupHandler('.button_wide', 'consultation');
 popupTransparency();
 
 // подсказка
-tooltip();
+formula();
+partners();
+
 
 // маска для телефона
 phoneMask();

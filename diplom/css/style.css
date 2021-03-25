@@ -764,8 +764,9 @@ template, [hidden] {
       .formula:after {
         display: none; } }
   .formula-slider {
+    display:flex;
     min-height: 400px;
-    margin-top: 102px; }
+    overflow:hidden; }
     @media (max-width: 575px) {
       .formula-slider {
         min-height: 265px;
