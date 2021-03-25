@@ -1,51 +1,52 @@
 const carousel = () => {
-    const partnersBlock = document.querySelector('.wrapper'),
-        partnersSlider = document.querySelector('.partners-slider'),
-        partnersSlides = partnersSlider.querySelectorAll('.partners-slider__slide');
+    const wrapper = document.querySelector('#partners .wrapper'),
+        slider = document.querySelector('.partners-slider'),
+        slides = slider.querySelectorAll('.partners-slider__slide');
     
-        let currentSlide = 0; // текущий слайд
-    
-        const prevSlide = (elem, index, strClass) => {
-            elem[index].classList.remove(strClass);
-        };
-    
-        const nextSlide = (elem, index, strClass) => {
-            elem[index].classList.add(strClass);
-        };
-    
-        partnersBlock.addEventListener('click', (e) => {
-                e.preventDefault();
-    
+        let slideWidth = slides[0].getBoundingClientRect().width;
+
+        // направление перелистывания
+        let direction = -1;
+
+        wrapper.addEventListener('click', e => {
                 let target = e.target;
     
-                // если клик не по этим селекторам, событие не срабатывает
                 // closest - чтобы можно было кликать по стрелкам svg и все работало
                 if (!target.closest('#partners-arrow_left')
                 && !target.closest('#partners-arrow_right')) { 
                     return;
                 }
-                // убираем активный класс у текущего слайда
-                prevSlide(partnersSlides, currentSlide, 'reviews-slide-active');
-    
-                if (target.closest('#reviews-arrow_right')) { 
-                    currentSlide++;
-                } else if (target.closest('#reviews-arrow_left')) { 
-                    currentSlide--;
-                } 
-    
-                // если слайд был последний, то переходит к первому
-                if (currentSlide >= partnersSlides.length){
-                    currentSlide = 0;
-                } 
-                // если слайд был первый, то переходит к последнему
-                if (currentSlide < 0) {
-                    currentSlide = partnersSlides.length-1;
+
+                if(direction === -1){
+                    slider.append(slider.firstElementChild);
+                } else if(direction === 1) {
+                    slider.prepend(slider.lastElementChild);
                 }
     
-                // добавляем активный класс слайду, у которого выполняется условие
-                nextSlide(partnersSlides, currentSlide, 'reviews-slide-active');
-        });
+                slider.style.transform = `translateX(0)`;
     
+                if (target.closest('#reviews-arrow_right')) { 
+
+                    if (direction === 1){
+                        direction = -1;
+                        slider.prepend(slider.lastElementChild);
+                    }
+                    
+                    // перемещает слайдер влево на размер одного слайда
+                    slider.style.transform = `translateX(-${slideWidth}px)`;
+
+                } else if (target.closest('#reviews-arrow_left')) { 
+
+                    if (direction === -1) {
+                        slider.append(slider.firstElementChild);
+                        direction = 1;
+                    }
+        
+                    slider.style.transform = `translateX(${slideWidth}px)`;
+                } 
+    
+        });
+
 }
 
 export default carousel;
