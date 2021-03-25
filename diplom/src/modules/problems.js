@@ -1,4 +1,4 @@
-const partners = () => {
+const problems = () => {
     const problemsItems = document.querySelectorAll('.row > .problems-item');
 
     const addTootlips = (item, eventOn, eventOut) => {
@@ -35,4 +35,4 @@ const partners = () => {
 
 }
 
-export default partners;
+export default problems;

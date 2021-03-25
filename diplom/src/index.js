@@ -2,7 +2,7 @@ import showPhone from './modules/togglePhone';
 import toggleMenu from './modules/menu';
 import phoneMask from './modules/phoneMask';
 import formula from './modules/formula';
-import partners from './modules/partners';
+import problems from './modules/problems';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
@@ -40,7 +40,7 @@ popupTransparency();
 
 // подсказка
 formula();
-partners();
+problems();
 
 
 // маска для телефона
@@ -66,11 +66,3 @@ design();
 repairTypesSlider();
 
 carousel();
-
-// todo
-/*
-
-// карусель
-carousel();
-
-*/
