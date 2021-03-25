@@ -5,14 +5,22 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import sendData from './modules/sendData';
-import popupHandler from './modules/popupHandler';
+import sendForm from './modules/sendForm';
+import design from './modules/design';
 
-// sliders
+// * popups
+import popupTransparency from './modules/popups/popupTransparency';
+import popupHandler from './modules/popups/popupHandler';
+
+// * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
-import docsSlider from './modules/sliders/docsSlider';
+import slider from './modules/sliders/slider';
+import reviews from './modules/sliders/reviews';
+
+// * tabs
+import scheme from './modules/tabs/scheme';
 
 // меню (бургер + адаптив + плавный скролл)
 toggleMenu();
@@ -26,42 +34,39 @@ popupHandler('.link-list', 'repair-types');
 // модальное окно политика конфиденциальности
 popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
-popupHandler('.button_wide', 'consultation')
+popupHandler('.button_wide', 'consultation');
+// модальное окно при клике на документы
+popupTransparency();
 
 // подсказка
 tooltip();
 
-// todo
-/*
-
 // маска для телефона
 phoneMask();
 
-
-
 // * sliders * //
-// слайдер с типами ремонта
-repairTypesSlider();
+// слайдер с отзывами
+reviews();
+// блок с документами при адаптиве становится слайдером
+slider('transparency', 'show', 'mobileHidden');
+
+// * tabs * //
+scheme();
 
 // блок с портфолио
 portfolioSlider();
 
-// модальное окно в виде слайдера
-popupSlider();
+// дизайн
+design();
 
-// блок с документами при адаптиве становится слайдером
-docsSlider();
+// слайдер с типами ремонта
+repairTypesSlider();
 
-// аккордеон
-accordion();
+
+// todo
+/*
 
 // карусель
 carousel();
-
-// подгрузка данных 
-getRepairTypes();
-
-// отправка форм
-sendData();
 
 */
