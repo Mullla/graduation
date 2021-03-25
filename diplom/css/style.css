@@ -6493,7 +6493,6 @@ strong {
   display: none; }
 
   .spinner {
-    margin: 100px auto;
     width: 40px;
     height: 40px;
     position: relative;
@@ -6509,7 +6508,7 @@ strong {
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
+    background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
     border-radius: 100%;
     
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;

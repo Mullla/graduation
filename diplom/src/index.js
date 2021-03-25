@@ -5,15 +5,18 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-import popupHandler from './modules/popupHandler';
 import sendForm from './modules/sendForm';
+import design from './modules/design';
 
+// * popups
+import popupTransparency from './modules/popups/popupTransparency';
+import popupHandler from './modules/popups/popupHandler';
 
 // * sliders
 import repairTypesSlider from './modules/sliders/repairTypesSlider';
 import portfolioSlider from './modules/sliders/portfolioSlider';
 import popupSlider from './modules/sliders/popupSlider';
-import docsSlider from './modules/sliders/docsSlider';
+import slider from './modules/sliders/slider';
 import reviews from './modules/sliders/reviews';
 
 // * tabs
@@ -32,6 +35,8 @@ popupHandler('.link-list', 'repair-types');
 popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation');
+// модальное окно при клике на документы
+popupTransparency();
 
 // аккордеон
 accordion();
@@ -48,34 +53,30 @@ getRepairTypes();
 // * sliders * //
 // слайдер с отзывами
 reviews();
-carousel();
+
+// блок с документами при адаптиве становится слайдером
+slider('transparency', 'show', 'mobileHidden');
 
 // * tabs * //
 scheme();
 
+// блок с портфолио
+portfolioSlider();
+design();
+
+// слайдер с типами ремонта
+repairTypesSlider();
+
+carousel();
+
 // todo
 /*
-
 
 // подсказка
 tooltip();
 
-// * sliders * //
-// слайдер с типами ремонта
-repairTypesSlider();
-
-// блок с портфолио
-portfolioSlider();
-
-// модальное окно в виде слайдера
-popupSlider();
-
-// блок с документами при адаптиве становится слайдером
-docsSlider();
-
 // карусель
 carousel();
-
 
 
 */

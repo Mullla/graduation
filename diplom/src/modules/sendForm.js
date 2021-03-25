@@ -1,4 +1,4 @@
-import popupHandler from './popupHandler';
+import popupHandler from './popups/popupHandler';
 
 const sendForm = () => {
     // сообщения для пользователя
