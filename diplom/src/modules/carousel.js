@@ -23,9 +23,9 @@ const carousel = () => {
                     slider.prepend(slider.lastElementChild);
                 }
     
-                slider.style.transform = `translateX(0)`;
+                // 
     
-                if (target.closest('#reviews-arrow_right')) { 
+                if (target.closest('#partners-arrow_right')) { 
 
                     if (direction === 1){
                         direction = -1;
@@ -34,8 +34,9 @@ const carousel = () => {
                     
                     // перемещает слайдер влево на размер одного слайда
                     slider.style.transform = `translateX(-${slideWidth}px)`;
+                    slider.style.transform = `translateX(0)`;
 
-                } else if (target.closest('#reviews-arrow_left')) { 
+                } else if (target.closest('#partners-arrow_left')) { 
 
                     if (direction === -1) {
                         slider.append(slider.firstElementChild);
@@ -43,6 +44,7 @@ const carousel = () => {
                     }
         
                     slider.style.transform = `translateX(${slideWidth}px)`;
+                    slider.style.transform = `translateX(0)`;
                 } 
     
         });
