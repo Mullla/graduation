@@ -1,60 +1,52 @@
 const carousel = () => {
-    const partnersBlock = document.querySelector('.wrapper'),
-        partnersSlider = document.querySelector('.reviews-slider-wrap'),
-        partnersSlides = reviewsSlider.querySelectorAll('.reviews-slider__slide');
+    const wrapper = document.querySelector('#partners .wrapper'),
+        slider = document.querySelector('.partners-slider'),
+        slides = slider.querySelectorAll('.partners-slider__slide');
     
-        let currentSlide = 0; // текущий слайд
-    
-        const prevSlide = (elem, index, strClass) => {
-            elem[index].classList.remove(strClass);
-        };
-    
-        const nextSlide = (elem, index, strClass) => {
-            elem[index].classList.add(strClass);
-        };
-    
-        reviewsBlock.addEventListener('click', (e) => {
-                e.preventDefault();
-    
+        let slideWidth = slides[0].getBoundingClientRect().width;
+
+        // направление перелистывания
+        let direction = -1;
+
+        wrapper.addEventListener('click', e => {
                 let target = e.target;
     
-                // если клик не по этим селекторам, событие не срабатывает
                 // closest - чтобы можно было кликать по стрелкам svg и все работало
-                if (!target.matches('.dot-reviews') 
-                && !target.closest('#reviews-arrow_left')
-                && !target.closest('#reviews-arrow_right')) { 
+                if (!target.closest('#partners-arrow_left')
+                && !target.closest('#partners-arrow_right')) { 
                     return;
                 }
-                // убираем активный класс у текущего слайда
-                prevSlide(reviewsSlides, currentSlide, 'reviews-slide-active');
-                prevSlide(dots, currentSlide, 'dot_active');
+
+                if(direction === -1){
+                    slider.append(slider.firstElementChild);
+                } else if(direction === 1) {
+                    slider.prepend(slider.lastElementChild);
+                }
+    
+                slider.style.transform = `translateX(0)`;
     
                 if (target.closest('#reviews-arrow_right')) { 
-                    currentSlide++;
+
+                    if (direction === 1){
+                        direction = -1;
+                        slider.prepend(slider.lastElementChild);
+                    }
+                    
+                    // перемещает слайдер влево на размер одного слайда
+                    slider.style.transform = `translateX(-${slideWidth}px)`;
+
                 } else if (target.closest('#reviews-arrow_left')) { 
-                    currentSlide--;
-                } else if (target.matches('.dot-reviews')){
-                    dots.forEach((elem, index) => {
-                        if (elem === target){
-                            currentSlide = index;
-                        }
-                    });
-                }
-    
-                // если слайд был последний, то переходит к первому
-                if (currentSlide >= reviewsSlides.length){
-                    currentSlide = 0;
+
+                    if (direction === -1) {
+                        slider.append(slider.firstElementChild);
+                        direction = 1;
+                    }
+        
+                    slider.style.transform = `translateX(${slideWidth}px)`;
                 } 
-                // если слайд был первый, то переходит к последнему
-                if (currentSlide < 0) {
-                    currentSlide = reviewsSlides.length-1;
-                }
     
-                // добавляем активный класс слайду, у которого выполняется условие
-                nextSlide(reviewsSlides, currentSlide, 'reviews-slide-active');
-                nextSlide(dots, currentSlide, 'dot_active');
         });
-    
+
 }
 
 export default carousel;

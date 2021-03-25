@@ -3435,6 +3435,7 @@ div.wave-block:nth-child(17):after {
         background: url("../images/director/title_mobile.svg") no-repeat;
         z-index: -1; } }
   .partners-slider {
+    display: flex;
     margin-top: 83px;
     -webkit-transition: 1s;
     transition: 1s; }

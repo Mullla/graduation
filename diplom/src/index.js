@@ -49,6 +49,7 @@ phoneMask();
 // * sliders * //
 // слайдер с отзывами
 reviews();
+
 // блок с документами при адаптиве становится слайдером
 slider('transparency', 'show', 'mobileHidden');
 
@@ -64,6 +65,7 @@ design();
 // слайдер с типами ремонта
 repairTypesSlider();
 
+carousel();
 
 // todo
 /*
