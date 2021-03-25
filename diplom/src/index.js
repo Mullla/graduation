@@ -5,9 +5,8 @@ import tooltip from './modules/tooltip';
 import accordion from './modules/accordion';
 import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
-
 import sendForm from './modules/sendForm';
-
+import design from './modules/design';
 
 // * popups
 import popupTransparency from './modules/popups/popupTransparency';
@@ -62,29 +61,20 @@ scheme();
 
 // блок с портфолио
 portfolioSlider();
+design();
+
+// слайдер с типами ремонта
+repairTypesSlider();
 
 
 // todo
 /*
 
-
 // подсказка
 tooltip();
 
-// * sliders * //
-// слайдер с типами ремонта
-repairTypesSlider();
-
-
-
-// модальное окно в виде слайдера
-popupSlider();
-
-
-
 // карусель
 carousel();
-
 
 
 */
