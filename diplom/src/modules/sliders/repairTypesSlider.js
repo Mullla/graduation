@@ -1,43 +1,41 @@
 const repairTypesSlider = () => {
-    const tabs = () => {
-        const tabHeader = document.querySelector('.nav-list-repair'),
-            tabs = tabHeader.querySelectorAll('.repair-types-nav__item'),
-            tabsContent = document.querySelectorAll('.types-repair');
+    const tabHeader = document.querySelector('.nav-list-repair'),
+        tabs = tabHeader.querySelectorAll('.repair-types-nav__item'),
+        tabsContent = document.querySelectorAll('.types-repair');
 
-        const toggleTabsContent = (index) => {
-            for (let i = 0; i < tabsContent.length; i++) {
-                if (index === i){
-                    tabsContent[i].classList.add('show');
-                    tabsContent[i].classList.remove('hide');
-                    tabs[i].classList.add('active');
+    const toggleTabsContent = (index) => {
+        for (let i = 0; i < tabsContent.length; i++) {
+            if (index === i){
+                tabsContent[i].classList.add('show');
+                tabsContent[i].classList.remove('hide');
+                tabs[i].classList.add('active');
 
-                } else {
-                    tabsContent[i].classList.remove('show');
-                    tabsContent[i].classList.add('hide');
-                    tabs[i].classList.remove('active');
-                }
+            } else {
+                tabsContent[i].classList.remove('show');
+                tabsContent[i].classList.add('hide');
+                tabs[i].classList.remove('active');
             }
-        };
+        }
+    };
 
-        tabHeader.addEventListener('click', event => {
-            let target = event.target;
+    tabHeader.addEventListener('click', event => {
+        let target = event.target;
 
-                target = target.closest('.repair-types-nav__item'); 
+            target = target.closest('.repair-types-nav__item'); 
 
-                if (target){
-                    tabs.forEach((item, i) => {
-                        if (item === target) {
-                            toggleTabsContent(i);
-                        }
-                    });
-                }
-        });
+            if (target){
+                tabs.forEach((item, i) => {
+                    if (item === target) {
+                        toggleTabsContent(i);
+                    }
+                });
+            }
+    });
 
-        tabsContent.forEach( elem => imageSlider(elem));
+    tabsContent.forEach( elem => imageSlider(elem));
 
-    }
 
-    const imageSlider = (sliderWrapper) => {
+    function imageSlider(sliderWrapper){
         const sliderBlock = sliderWrapper.closest('.repair-types-slider-wrap'),
             slides = sliderWrapper.querySelectorAll('.repair-types-slider__slide'),
             repairCounter = document.getElementById('repair-counter'),
@@ -94,59 +92,62 @@ const repairTypesSlider = () => {
 
     }
 
+    const mobileSlides = () => {
+        const sliderBlock = document.querySelector('#repair-types .nav-wrap'),
+            sliderWrapper = sliderBlock.querySelector('.nav-list-repair'),
+            slides = sliderWrapper.querySelectorAll('.repair-types-nav__item'),
+            arrowLeft = document.getElementById('nav-arrow-repair-left_base'),
+            arrowRight = document.getElementById('nav-arrow-repair-right_base');
 
-    tabs();
-    // adaptiveSlider();
+
+        let currentSlide = 0; // текущий слайд
+        arrowLeft.style.display = 'none'
+
+
+        const prevSlide = (elem, index, strClass) => {
+            elem[index].classList.remove(strClass);
+            sliderWrapper.style.transform = `translateX(${index * elem[index].scrollWidth}px)`;
+        };
+
+        const nextSlide = (elem, index, strClass) => {
+            elem[index].classList.add(strClass);
+            sliderWrapper.style.transform = `translateX(-${index * elem[index].scrollWidth}px)`;
+            if (index === slides.length - 1) {sliderWrapper.style.transform = `translateX(-${(index - 1) * elem[index-1].scrollWidth}px)`;}
+        };
+
+        sliderBlock.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                let target = e.target;
+
+                // если клик не по этим селекторам, событие не срабатывает
+                // closest - чтобы можно было кликать по стрелкам svg и все работало
+                if (!target.closest('#nav-arrow-repair-left_base')
+                && !target.closest('#nav-arrow-repair-right_base')) { 
+                    return;
+                }
+                // убираем активный класс у текущего слайда
+                prevSlide(slides, currentSlide, 'active');
+                // toggleTabsContent(currentSlide);
+
+                if (target.closest('#nav-arrow-repair-right_base')) { 
+                    if (currentSlide === slides.length - 2) arrowRight.style.display = 'none';
+                    currentSlide++;
+                    arrowLeft.style.display = 'block';
+                } else if (target.closest('#nav-arrow-repair-left_base')) { 
+                    if (currentSlide === 1) arrowLeft.style.display = 'none';
+                    currentSlide--;
+                    arrowRight.style.display = 'block';
+                } 
+
+                // добавляем активный класс слайду, у которого выполняется условие
+                nextSlide(slides, currentSlide, 'active');
+
+                toggleTabsContent(currentSlide);
+        });
+    }
+
+    mobileSlides();
 }
 
 export default repairTypesSlider;
-
-
-// const adaptiveSlider = () => {
-//     const sliderBlock = document.querySelector('.nav-wrap-repair'),
-//         slides = sliderBlock.querySelectorAll('.repair-types-nav__item'),
-//         leftArrow = document.getElementById('nav-arrow-repair-left_base'),
-//         rightArrow = document.getElementById('nav-arrow-repair-right_base');
-
-//     let currentSlide = 0; // текущий слайд
-
-//     const prevSlide = (elems, index, showClass) => {
-//         elems[index].classList.remove(showClass);
-//     };
-
-//     const nextSlide = (elems, index, showClass) => {
-//         elems[index].classList.add(showClass);
-//     };
-
-//     currentSlide === slides.length - 1 ? rightArrow.style.display = 'none' : rightArrow.style.display = 'block';
-//     currentSlide === 0 ? leftArrow.style.display = 'none' : leftArrow.style.display = 'block';
-
-//     sliderBlock.addEventListener('click', (e) => {
-//         e.preventDefault();
-
-//         let target = e.target;
-
-//         // если клик не по этим селекторам, событие не срабатывает
-//         // closest - чтобы можно было кликать по стрелкам svg и все работало
-//         if (!target.closest('#nav-arrow-repair-left_base')
-//             && !target.closest('#nav-arrow-repair-right_base')) { 
-//                 return;
-//         }
-//         // убираем активный класс у текущего слайда
-//         prevSlide(slides, currentSlide, 'active');
-            
-
-//         if (target.closest('#nav-arrow-repair-right_base')) { 
-//             currentSlide++;
-//         } else if (target.closest('#nav-arrow-repair-left_base')) { 
-//             currentSlide--;
-//         } 
-
-//         currentSlide === slides.length ? rightArrow.style.display = 'none' : rightArrow.style.display = 'block';
-//         currentSlide === 0 ? leftArrow.style.display = 'none' : leftArrow.style.display = 'block';
-
-//           // добавляем активный класс слайду, у которого выполняется условие
-//         nextSlide(slides, currentSlide, 'active');
-            
-//     });
-// }
