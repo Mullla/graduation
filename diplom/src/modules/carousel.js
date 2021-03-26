@@ -3,6 +3,7 @@ const carousel = () => {
         slider = document.querySelector('.partners-slider'),
         slides = slider.querySelectorAll('.partners-slider__slide');
     
+        // ширина слайда
         let slideWidth = slides[0].getBoundingClientRect().width;
 
         // направление перелистывания
@@ -23,7 +24,7 @@ const carousel = () => {
                     slider.prepend(slider.lastElementChild);
                 }
     
-                slider.style.transform = `translateX(0)`;
+            
     
                 if (target.closest('#reviews-arrow_right')) { 
 
@@ -34,6 +35,7 @@ const carousel = () => {
                     
                     // перемещает слайдер влево на размер одного слайда
                     slider.style.transform = `translateX(-${slideWidth}px)`;
+                    slider.style.transform = `translateX(0)`;
 
                 } else if (target.closest('#reviews-arrow_left')) { 
 
@@ -43,6 +45,7 @@ const carousel = () => {
                     }
         
                     slider.style.transform = `translateX(${slideWidth}px)`;
+                    slider.style.transform = `translateX(0)`;
                 } 
     
         });
