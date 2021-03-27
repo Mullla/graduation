@@ -5821,31 +5821,37 @@ div.wave-block:nth-child(17):after {
     box-shadow: 0 8px 40px rgba(254, 171, 23, 0.2);
     opacity: 1;
     -webkit-transition: 0.4s;
-    transition: 0.4s; }
+    transition: 0.4s; 
+  }
     .active-item .formula-item__icon-inner {
       width: 58px;
-      height: 58px; }
+      height: 58px; 
+    }
     @media (max-width: 575px) {
       .active-item .formula-item__icon {
         width: 48px;
-        height: 48px; } }
-    .active-item .formula-item__icon-inner {
+        height: 48px; } 
+      }
+    .active-item .formula-item__icon-inner, .active-item .problems-item__icon-inner {
       opacity: 1;
-      font-size: 24px; }
+      font-size: 24px; 
+    }
       @media (max-width: 575px) {
         .active-item .formula-item__icon-inner {
           width: 36px;
           height: 36px;
-          font-size: 15px; } }
-      .active-item .formula-item__icon-inner__descr {
+          font-size: 15px; } 
+        }
+      .active-item .formula-item__icon-inner__descr, .active-item .problems-item__icon-inner__descr {
         font-size: 20px; }
-  .active-item .formula-item__icon-inner {
+  .active-item .formula-item__icon-inner, .active-item .problems-item__icon-inner {
     color: #FFFFFF;
     background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
-    background: linear-gradient(90deg, #F48922 0%, #FFB015 100%); }
-  .active-item .formula-item__icon span {
+    background: linear-gradient(90deg, #F48922 0%, #FFB015 100%); 
+  }
+  .active-item .formula-item__icon span, .active-item .problems-item__icon span {
     color: #FFFFFF; }
-  .active-item .formula-item-popup {
+  .active-item .formula-item-popup, .active-item .problems-item-popup {
     visibility: visible;
     opacity: 1; }
   .active-item-partners {
@@ -5864,16 +5870,22 @@ div.wave-block:nth-child(17):after {
     width: 80px;
     height: 80px;
     -webkit-box-shadow: 0 8px 40px rgba(254, 171, 23, 0.2);
-    box-shadow: 0 8px 40px rgba(254, 171, 23, 0.2); }
+    box-shadow: 0 8px 40px rgba(254, 171, 23, 0.2);
+    opacity: 1;
+    -webkit-transition: 0.4s;
+    transition: 0.4s; 
+  }
     @media (max-width: 575px) {
       .active-item .problems-item__icon {
         width: 48px;
-        height: 48px; } }
-    @media (max-width: 1024px) {
+        height: 48px; } 
+      }
+
       .active-item .problems-item__icon-inner {
         background: -webkit-gradient(linear, left top, right top, from(#F48922), to(#FFB015));
         background: linear-gradient(90deg, #F48922 0%, #FFB015 100%);
-        color: #FFFFFF; } }
+        color: #FFFFFF; } 
+
     @media (max-width: 575px) {
       .active-item .problems-item__icon-inner {
         width: 36px;
@@ -5891,14 +5903,7 @@ div.wave-block:nth-child(17):after {
           align-items: center;
           width: 18px;
           height: 18px; } }
-    .active-item .problems-item__icon-inner svg {
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-      -webkit-transition: 0.2s;
-      transition: 0.2s;
-      margin-top: 2px;
-      width: 18px;
-      height: 18px; }
+
       @media (min-width: 576px) {
         .active-item .problems-item__icon-inner svg {
           margin-top: 3px;
@@ -5910,6 +5915,29 @@ div.wave-block:nth-child(17):after {
     .active-item .problems-item-popup {
       visibility: visible;
       opacity: 1; } }
+
+      .problems-item.active-item .problems-item__icon-inner > .svg-wrap svg {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg) !important;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        margin-top: 2px;
+        width: 18px;
+        height: 18px; }
+
+
+
+.mobileHidden{display:flex}@media(max-width:1091px){.mobileHidden{display:none}}.partners-slider{display:flex; overflow: hidden; width:100%;margin:auto}.partners-slider__slide{width: 200px;margin: 0 10px;}#partners .wrapper {overflow:hidden}.formula-slider{display:flex; overflow: hidden; width:100%;margin:auto}.formula-slider__slide{width: 200px;margin: 0 10px;}.formula-slider-wrap{overflow:hidden}
+@media(max-width: 400px){
+  .formula-slider__slide{
+    width: 300px;
+    margin: 0 30px;
+  }
+  .formula-slider{
+    width: 200px;
+  }
+
+}
 
 #designs > .wrapper > div.preview-block.visible > .preview-block__item > .preview-block__item-inner.preview_active {
   color: #ffffff; }

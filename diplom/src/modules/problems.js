@@ -6,9 +6,7 @@ const problems = () => {
             wrapper = popup.querySelector('.wrapper');
         
         item.addEventListener(eventOn, () => {
-
-            popup.style.visibility = 'visible';
-            popup.style.opacity = 1;
+            item.classList.add('active-item');
 
             if(popup.getBoundingClientRect().top < 0){
                 popup.style.top = 140 + 'px';
@@ -20,7 +18,7 @@ const problems = () => {
         });
     
         item.addEventListener(eventOut, () => {
-            popup.style.visibility = 'hidden';
+            item.classList.remove('active-item');
 
             // обнуляю стили после возврата фокуса
             popup.style.top = '';

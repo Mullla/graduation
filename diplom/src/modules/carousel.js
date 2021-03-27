@@ -13,8 +13,8 @@ const carousel = () => {
                 let target = e.target;
     
                 // closest - чтобы можно было кликать по стрелкам svg и все работало
-                if (!target.closest('#reviews-arrow_left')
-                && !target.closest('#reviews-arrow_right')) { 
+                if (!target.closest('#partners-arrow_left')
+                && !target.closest('#partners-arrow_right')) { 
                     return;
                 }
 
@@ -46,6 +46,7 @@ const carousel = () => {
         
                     slider.style.transform = `translateX(${slideWidth}px)`;
                     slider.style.transform = `translateX(0)`;
+
                 } 
     
         });
@@ -53,3 +54,5 @@ const carousel = () => {
 }
 
 export default carousel;
+
+// .active-item-partners
