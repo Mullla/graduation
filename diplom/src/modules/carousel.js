@@ -1,9 +1,18 @@
 const carousel = () => {
+<<<<<<< HEAD
     const wrapper = document.querySelector('#partners .wrapper'),
         slider = document.querySelector('.partners-slider'),
         slides = slider.querySelectorAll('.partners-slider__slide');
     
         // ширина слайда
+=======
+    const slider = () => {
+        const wrapper = document.querySelector('#partners .wrapper'),
+            slider = document.querySelector('.partners-slider');
+
+        let slides = slider.querySelectorAll('.partners-slider__slide');
+
+>>>>>>> carousel
         let slideWidth = slides[0].getBoundingClientRect().width;
 
         // направление перелистывания
@@ -50,9 +59,14 @@ const carousel = () => {
                 } 
     
         });
+    }
 
+    slider();
 }
 
 export default carousel;
 
+<<<<<<< HEAD
 // .active-item-partners
+=======
+>>>>>>> carousel
