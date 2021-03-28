@@ -6568,3 +6568,9 @@ strong {
       -webkit-transform: scale(1.0);
     }
   }
+
+  .open-popup{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+  }

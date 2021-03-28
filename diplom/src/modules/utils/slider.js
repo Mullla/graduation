@@ -79,7 +79,7 @@ const slider = (sectionName, addActive, addHide, options) => {
                 slider.style.transform = `translateX(-${index * elem[index].scrollWidth}px)`;
 
                 if (index === slides.length - 1) {
-                    slider.style.transform = `translateX(-${(index - 1) * elem[index-1].scrollWidth}px)`;
+                    slider.style.transform = `translateX(-${(index) * elem[index - 1].scrollWidth}px)`;
                 }
             }
     };

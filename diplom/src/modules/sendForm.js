@@ -14,15 +14,19 @@ const sendForm = () => {
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 1rem; color: #f48922';
 
+    // коллекция с правильно заполненными полями
+    const validFields = new Set();
 
     const forms = document.querySelectorAll('form');
 
 
     forms.forEach( form => {
+        const submitBtn = form.querySelector('.button')
+        submitBtn.disabled = true;
 
         createFormElements(form);
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', e => {
             e.preventDefault();
             form.insertAdjacentElement('afterbegin', statusMessage);
             statusMessage.innerHTML = loadMessage;
@@ -51,8 +55,10 @@ const sendForm = () => {
 
             // очищает значения формы
             e.target.reset();
-
-        });
+            // очищает коллекцию, чтобы можно было снова отправлять форму
+            validFields.clear();
+            submitBtn.disabled = true;
+        }); 
 
     });
 
@@ -97,10 +103,42 @@ const sendForm = () => {
         }
     
         // для каждого элемента формы должно быть заполнено поле, в том числе и для чекбокса - если галочка не стоит, форма не отправится
-        formElements.forEach( elem => elem.required = true );
+        formElements.forEach( elem => validate(elem) );
 
     };
 
+    function validate(elem) {
+        elem.required = true;                
+
+        const formBtn = elem.closest('form').querySelector('.button');
+
+        elem.addEventListener('input', () => {
+            if (elem.name === 'phone') {
+                if(elem.value.length < 10){
+                    validFields.delete(elem)
+                } else {
+                    validFields.add(elem);
+                }
+            } else if (elem.name === 'name'){
+                elem.value = elem.value.replace(/[^а-яё]/ig, '');
+
+                if(elem.value.length < 2){
+                    validFields.delete(elem)
+                } else {
+                    validFields.add(elem);
+                }
+            } 
+
+            if(validFields.size === 2){
+                formBtn.disabled = false;
+            } else {
+                formBtn.disabled = true;
+            }
+
+        });
+
+        
+    }
 }
 
 export default sendForm;
