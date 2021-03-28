@@ -6519,7 +6519,7 @@ strong {
   transform: scale(1, -1); }
 
 .slider-dots {
-  display: none; }
+  display: flex; }
 
   .spinner {
     width: 40px;

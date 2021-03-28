@@ -1,32 +1,30 @@
-import showPhone from './modules/togglePhone';
-import toggleMenu from './modules/menu';
-import phoneMask from './modules/phoneMask';
-import formula from './modules/formula';
-import problems from './modules/problems';
-import accordion from './modules/accordion';
-import carousel from './modules/carousel';
 import getRepairTypes from './modules/getRepairTypes';
 import sendForm from './modules/sendForm';
-import design from './modules/design';
+import phoneMask from './modules/phoneMask';
 
-// * popups
-import popupTransparency from './modules/popups/popupTransparency';
-import popupHandler from './modules/popups/popupHandler';
+// * handlers * //
+import popupHandler from './modules/utils/popupHandler';
 
-// * sliders
-import repairTypesSlider from './modules/sliders/repairTypesSlider';
-import portfolioSlider from './modules/sliders/portfolioSlider';
-import slider from './modules/sliders/slider';
-import reviews from './modules/sliders/reviews';
+// * sections * //
+import main from './modules/sections/main';
+import menu from './modules/sections/menu';
+import formula from './modules/sections/formula';
+import repairTypes from './modules/sections/repairTypes';
+import portfolio from './modules/sections/portfolio';
+import transparency from './modules/sections/transparency';
+import problems from './modules/sections/problems';
+import design from './modules/sections/design';
+import reviews from './modules/sections/reviews';
+import scheme from './modules/sections/scheme';
+import faq from './modules/sections/faq';
+import partners from './modules/sections/partners';
 
-// * tabs
-import scheme from './modules/tabs/scheme';
-
-// меню (бургер + адаптив + плавный скролл)
-toggleMenu();
-
-// список телефонов
-showPhone();
+// загрузка данных о видах ремонта
+getRepairTypes();
+//отправка форм
+sendForm();
+// маска для телефона
+phoneMask();
 
 // * modals * //
 // модальное окно виды ремонта
@@ -35,34 +33,29 @@ popupHandler('.link-list', 'repair-types');
 popupHandler('span.link-privacy', 'privacy');
 // модальное окно проконсультироваться
 popupHandler('.button_wide', 'consultation');
-// модальное окно при клике на документы
-popupTransparency();
 
-// подсказка
+// * sections * //
+// показ второго телефона
+main();
+// меню
+menu();
+// формула успеха: подсказка при наведении и слайдер на мобильной версии
 formula();
+// виды ремонта
+repairTypes();
+// портфолио
+portfolio();
+// документы - transparency
+transparency();
+// проблемы
 problems();
-
-
-// маска для телефона
-phoneMask();
-
-// * sliders * //
-// слайдер с отзывами
-reviews();
-
-// блок с документами при адаптиве становится слайдером
-slider('transparency', 'show', 'mobileHidden');
-
-// * tabs * //
-scheme();
-
-// блок с портфолио
-portfolioSlider();
-
 // дизайн
 design();
-
-// слайдер с типами ремонта
-repairTypesSlider();
-
-carousel();
+// отзывы
+reviews();
+// схема работы над проектом
+scheme();
+// часто задаваемые вопросы
+faq();
+// партнеры
+partners();

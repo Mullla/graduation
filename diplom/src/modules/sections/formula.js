@@ -1,36 +1,7 @@
+import tooltip from '../utils/tooltip';
+
 const formula = () => {
-    const formulaItems = document.querySelectorAll('.row > .formula-item');
-
-    const addTootlips = (item, eventOn, eventOut) => {
-        const popup = item.querySelector('.formula-item-popup'),
-            p = popup.querySelector('p');
-        
-        item.addEventListener(eventOn, () => {
-
-            item.classList.add('active-item');
-
-            if(popup.getBoundingClientRect().top < 0){
-                popup.style.top = 140 + 'px';
-                popup.style.transform = 'rotate(180deg)';
-                p.style.transform = 'rotate(-180deg)';
-
-                item.style.zIndex = 2;
-            }
-        });
-    
-        item.addEventListener(eventOut, () => {
-            // popup.style.visibility = 'hidden';
-            item.classList.remove('active-item');
-
-            // обнуляю стили после возврата фокуса
-            popup.style.top = '';
-            popup.style.transform = '';
-            p.style.transform = '';
-            item.style.zIndex = '';
-        });
-    }
-
-    formulaItems.forEach( item => addTootlips(item, 'mouseover', 'mouseout'));
+    tooltip('formula');
 
     function addStyles(wrapper, slider, slides) {
         let slidesToShow = 3;

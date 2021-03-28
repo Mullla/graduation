@@ -1,4 +1,4 @@
-const carousel = () => {
+const partners = () => {
     const slider = () => {
         const wrapper = document.querySelector('#partners .wrapper'),
             slider = document.querySelector('.partners-slider');
@@ -56,6 +56,6 @@ const carousel = () => {
     slider();
 }
 
-export default carousel;
+export default partners;
 
 // .active-item-partners

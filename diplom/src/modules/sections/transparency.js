@@ -1,5 +1,4 @@
 import popupHandler from '../utils/popupHandler';
-import sliderHandler from '../utils/sliderHandler';
 import slider from '../utils/slider';
 
 const transparency = () => {
