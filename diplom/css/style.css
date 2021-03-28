@@ -6574,3 +6574,7 @@ strong {
     opacity: 1;
     transition: all 0.4s ease-in-out;
   }
+
+button:disabled {
+  opacity: 0.7;
+}

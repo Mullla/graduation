@@ -114,12 +114,15 @@ const sendForm = () => {
 
         elem.addEventListener('input', () => {
             if (elem.name === 'phone') {
+                elem.maxLength = 18;
+
                 if(elem.value.length < 10){
                     validFields.delete(elem)
                 } else {
                     validFields.add(elem);
                 }
             } else if (elem.name === 'name'){
+                elem.minLength = 2;
                 elem.value = elem.value.replace(/[^а-яё]/ig, '');
 
                 if(elem.value.length < 2){
@@ -137,7 +140,6 @@ const sendForm = () => {
 
         });
 
-        
     }
 }
 
